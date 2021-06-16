@@ -11,6 +11,7 @@ export class CarousalComponent implements OnInit, OnDestroy {
   @Input('waitTime') waitTime: number;
   @Input('imgSources') imgSources: string[];
   @Input('enableSwipes') enableSwipes: boolean;
+  @Input('autoChange') autoChange: boolean;
   intervalId: number;
 
   changeSlideAuto(): void{
@@ -46,9 +47,11 @@ export class CarousalComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-     this.intervalId = setInterval(() => {
-      this.changeSlideAuto();
-    }, this.waitTime);
+    if (this.autoChange){
+      this.intervalId = setInterval(() => {
+        this.changeSlideAuto();
+      }, this.waitTime);
+    }
   }
 
   ngOnDestroy(): void {

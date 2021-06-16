@@ -1,0 +1,19 @@
+<div fxLayout="column" style="margin: 30px">
+  <div>
+    <H1 > Carousel component</H1>
+  </div>
+
+  <p>Simply add, </p>
+  <ul>
+    <li>imgSources: string[] - Array containing image paths as a string.</li>
+    <li>waitTime: number - How much time should an image must show (in ms). </li>
+    <li>enableSwipes: boolean - Swipe function on or off.</li>
+    <li>autoChange: boolean - Should auto image change on or off.</li>
+  </ul>
+  <app-carousal fxLayout="column" fxLayoutAlign="center center" style="margin-top: 20px"
+                [waitTime]="4000"
+                [enableSwipes]="true"
+                [imgSources]="imgSrc" [autoChange]="true"></app-carousal>
+</div>
+
+

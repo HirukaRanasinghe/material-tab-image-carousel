@@ -1,0 +1,35 @@
+
+<form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
+      [formGroup]="productInputForm" (ngSubmit)="onSubmit()"
+      style="height: 100vh"
+>
+  <mat-form-field fxLayout="row" fxLayoutAlign="center center">
+    <input formControlName="productId" matInput placeholder="Product Id" required>
+  </mat-form-field>
+
+  <mat-form-field fxLayout="row" fxLayoutAlign="center center">
+    <input formControlName="productName" matInput placeholder="Product Name" required>
+  </mat-form-field>
+
+  <mat-form-field fxLayout="row" fxLayoutAlign="center center">
+    <input formControlName="price" matInput placeholder="Price" required>
+  </mat-form-field>
+
+  <label for="file">Add Images</label>
+  <input id="file" formControlName="images"
+         type="file" multiple=""  accept="image/*"
+         (change)="showPreview($event)" required>
+
+    <app-carousal
+      *ngIf="imageURL.length !== 0"
+      fxLayout="row" fxLayoutAlign="center center"
+      style="height: 300px;width: 300px"
+      [autoChange]="true" [enableSwipes]="true" [waitTime]="4000" [imgSources]="imageURL">
+    </app-carousal>
+
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button mat-stroked-button type="submit">Submit</button>
+  </div>
+</form>
+

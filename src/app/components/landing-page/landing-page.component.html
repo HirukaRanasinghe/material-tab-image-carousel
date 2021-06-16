@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button aria-label="drawer open button." (click)="drawer.toggle();">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Carousel Examples</span>
+</mat-toolbar>
+<mat-sidenav-container >
+  <mat-sidenav #drawer mode="over">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/carousel-component" (click)="drawer.toggle()">
+        <span>Carousel component</span>
+      </a>
+      <a mat-list-item routerLink="/table-example" (click)="drawer.toggle()">
+        <span>Table Example</span>
+      </a>
+      <a mat-list-item routerLink="/card-example" (click)="drawer.toggle()">
+        <span>Card Example</span>
+      </a>
+      <a mat-list-item routerLink="/form-example" (click)="drawer.toggle()">
+        <span>Form Example</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

@@ -1,51 +1,46 @@
 
-<div fxLayout="column" style=" padding: 10px;">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aliquid, at deleniti distinctio
-    dolore id labore minima molestias nisi provident quaerat quibusdam reiciendis suscipit temporibus
-    ut vel veniam voluptas.</p>
-</div>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" style="width:80%;box-sizing:border-box">
+    <div>
+      <button class="mat-elevation-z4" type="button"
+              mat-mini-fab color="primary"
+              (click)="showPreviousSlide()">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+    </div>
 
-<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" style="padding: 10px"
-     >
-  <div>
-    <button class="mat-elevation-z4"
-            mat-mini-fab color="primary"
-            (click)="showPreviousSlide()">
-      <mat-icon>chevron_left</mat-icon>
-    </button>
-  </div>
-
-  <div>
-    <mat-tab-group
-      mat-align-tabs="center" headerPosition="below"
-      disableRipple disablePagination="true" #carousal style="width: 100%;"
+    <div>
+      <mat-tab-group dynamicHeight="false"
+                     mat-align-tabs="center" headerPosition="below"
+                     disableRipple disablePagination="true" #carousal style="width: 100%;"
       >
 
-      <mat-tab *ngFor= "let src of imgSources" >
-        <ng-template mat-tab-label>
-          <mat-icon class="tab-icon">fiber_manual_record</mat-icon>
-        </ng-template>
+        <mat-tab *ngFor= "let src of imgSources" >
+          <ng-template mat-tab-label>
+            <mat-icon class="tab-icon">fiber_manual_record</mat-icon>
+          </ng-template>
 
-        <div  fxLayout="row" fxLayoutAlign="center center">
-          <img alt="msi_logo"  fxFlexFill [src]="src" style="object-fit: contain" (swipeleft)="enableSwipes? changeSlideAuto(): false;"
-               (swiperight)="enableSwipes?showPreviousSlide(): false;">
-        </div>
-      </mat-tab>
+          <div  fxLayout="row" fxLayoutAlign="center center">
+            <img
+              fxFlexFill
+              [src]="src"
+              style="object-fit: contain"
+              (swipeleft)="enableSwipes? changeSlideAuto(): false;"
+              (swiperight)="enableSwipes?showPreviousSlide(): false;">
+          </div>
+        </mat-tab>
 
-    </mat-tab-group>
+      </mat-tab-group>
+    </div>
+
+    <div>
+      <button class="mat-elevation-z4" type="button"
+              mat-mini-fab color="primary"
+              (click)="changeSlideAuto()">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
   </div>
 
-  <div>
-    <button class="mat-elevation-z4"
-            mat-mini-fab color="primary"
-            (click)="changeSlideAuto()">
-      <mat-icon>chevron_right</mat-icon>
-    </button>
-  </div>
-</div>
 
-<div fxLayout="column" style=" padding: 10px;">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aliquid, at deleniti distinctio
-    dolore id labore minima molestias nisi provident quaerat quibusdam reiciendis suscipit temporibus
-    ut vel veniam voluptas.</p>
-</div>
+
+
